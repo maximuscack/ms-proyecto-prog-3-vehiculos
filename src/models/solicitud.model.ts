@@ -1,4 +1,8 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {AreaLineaInvetigacion} from './area-linea-invetigacion.model';
+import {Proponente} from './proponente.model';
+import {TiposSolicitud} from './tipos-solicitud.model';
+import {Modalidad} from './modalidad.model';
 
 @model()
 export class Solicitud extends Entity {
@@ -7,7 +11,7 @@ export class Solicitud extends Entity {
     id: true,
     generated: true,
   })
-  id_proponente?: number;
+  id_solicitud?: number;
 
   @property({
     type: 'date',
@@ -29,6 +33,17 @@ export class Solicitud extends Entity {
   })
   descripcion?: string;
 
+  @belongsTo(() => AreaLineaInvetigacion, {name: 'tiene_area_linea_investigacion'})
+  Id_area_linea_investigacion: number;
+
+  @belongsTo(() => Proponente, {name: 'tiene_proponente'})
+  id_proponente: number;
+
+  @belongsTo(() => TiposSolicitud, {name: 'tiene_tipo_solicitud'})
+  id_tipo_solicitud: number;
+
+  @belongsTo(() => Modalidad, {name: 'tiene_modalidad'})
+  id_modalidad: number;
 
   constructor(data?: Partial<Solicitud>) {
     super(data);
