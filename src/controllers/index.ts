@@ -9,3 +9,7 @@ export * from './evaluacion-solicitud-solicitud.controller';
 export * from './solicitud-proponente.controller';
 export * from './solicitud-tipos-solicitud.controller';
 export * from './solicitud-modalidad.controller';
+export * from './resultados-evaluacion.controller';
+export * from './evaluacion-solicitud.controller';
+export * from './area-linea-investigacion.controller';
+export * from './jurados.controller';
