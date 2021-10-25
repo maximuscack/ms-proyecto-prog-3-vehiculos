@@ -37,7 +37,7 @@ export class AreaLineaInvestigacionController {
         'application/json': {
           schema: getModelSchemaRef(AreaLineaInvetigacion, {
             title: 'NewAreaLineaInvetigacion',
-            exclude: ['id'],
+            exclude: ['id_linea_investigacion'],
           }),
         },
       },

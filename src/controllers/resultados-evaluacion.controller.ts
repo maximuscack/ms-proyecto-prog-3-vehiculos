@@ -37,7 +37,7 @@ export class ResultadosEvaluacionController {
         'application/json': {
           schema: getModelSchemaRef(ResultadoEvaluacion, {
             title: 'NewResultadoEvaluacion',
-            exclude: ['id'],
+            exclude: ['id_RE'],
           }),
         },
       },
