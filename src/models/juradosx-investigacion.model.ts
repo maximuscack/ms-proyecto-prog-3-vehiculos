@@ -19,6 +19,16 @@ export class JuradosxInvestigacion extends Entity {
   })
   id_area_investigacion?: number;
 
+  @property({
+    type: 'number',
+  })
+  juradosId?: number;
+
+  @property({
+    type: 'number',
+  })
+  areaLineaInvetigacionId?: number;
+
   constructor(data?: Partial<JuradosxInvestigacion>) {
     super(data);
   }

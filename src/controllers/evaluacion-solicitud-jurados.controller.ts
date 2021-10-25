@@ -33,6 +33,6 @@ export class EvaluacionSolicitudJuradosController {
   async getJurados(
     @param.path.number('id') id: typeof EvaluacionSolicitud.prototype.id_E,
   ): Promise<Jurados> {
-    return this.evaluacionSolicitudRepository.tiene_jurados(id);
+    return this.evaluacionSolicitudRepository.jurados(id);
   }
 }

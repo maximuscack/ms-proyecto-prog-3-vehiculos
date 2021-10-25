@@ -1,6 +1,7 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
 import {AreaLineaInvetigacion} from './area-linea-invetigacion.model';
 import {JuradosxInvestigacion} from './juradosx-investigacion.model';
+import {EvaluacionSolicitud} from './evaluacion-solicitud.model';
 
 @model()
 export class Jurados extends Entity {
@@ -29,7 +30,10 @@ export class Jurados extends Entity {
   })
   correo_electronico: string;
 
-  @hasMany(() => AreaLineaInvetigacion, {through: {model: () => JuradosxInvestigacion, keyFrom: 'id_jurados', keyTo: 'id_area_investigacion'}})
+  @hasMany(() => EvaluacionSolicitud)
+  evaluacionSolicituds: EvaluacionSolicitud[];
+
+  @hasMany(() => AreaLineaInvetigacion, {through: {model: () => JuradosxInvestigacion}})
   areaLineaInvetigacions: AreaLineaInvetigacion[];
 
   constructor(data?: Partial<Jurados>) {

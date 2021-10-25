@@ -18,6 +18,9 @@ export class Departamento extends Entity {
   @belongsTo(() => Facultad, {name: 'tiene_facultad'})
   id_facultad: number;
 
+  @belongsTo(() => Facultad)
+  facultadId: number;
+
   constructor(data?: Partial<Departamento>) {
     super(data);
   }

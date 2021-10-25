@@ -1,8 +1,9 @@
-import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {Entity, model, property, belongsTo, hasMany} from '@loopback/repository';
 import {AreaLineaInvetigacion} from './area-linea-invetigacion.model';
 import {Proponente} from './proponente.model';
 import {TiposSolicitud} from './tipos-solicitud.model';
 import {Modalidad} from './modalidad.model';
+import {EvaluacionSolicitud} from './evaluacion-solicitud.model';
 
 @model()
 export class Solicitud extends Entity {
@@ -32,18 +33,20 @@ export class Solicitud extends Entity {
     type: 'string',
   })
   descripcion?: string;
+  @belongsTo(() => Proponente)
+  proponenteId: number;
 
-  @belongsTo(() => AreaLineaInvetigacion, {name: 'tiene_area_linea_investigacion'})
-  Id_area_linea_investigacion: number;
+  @belongsTo(() => Modalidad)
+  modalidadId: number;
 
-  @belongsTo(() => Proponente, {name: 'tiene_proponente'})
-  id_proponente: number;
+  @belongsTo(() => TiposSolicitud)
+  tiposSolicitudId: number;
 
-  @belongsTo(() => TiposSolicitud, {name: 'tiene_tipo_solicitud'})
-  id_tipo_solicitud: number;
+  @hasMany(() => EvaluacionSolicitud)
+  evaluacionSolicituds: EvaluacionSolicitud[];
 
-  @belongsTo(() => Modalidad, {name: 'tiene_modalidad'})
-  id_modalidad: number;
+  @belongsTo(() => AreaLineaInvetigacion)
+  areaLineaInvetigacionId: number;
 
   constructor(data?: Partial<Solicitud>) {
     super(data);

@@ -37,7 +37,7 @@ export class SolicitudController {
         'application/json': {
           schema: getModelSchemaRef(Solicitud, {
             title: 'NewSolicitud',
-            exclude: ['id'],
+            exclude: ['id_solicitud'],
           }),
         },
       },

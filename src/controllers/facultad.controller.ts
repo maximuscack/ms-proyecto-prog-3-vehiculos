@@ -37,7 +37,7 @@ export class FacultadController {
         'application/json': {
           schema: getModelSchemaRef(Facultad, {
             title: 'NewFacultad',
-            exclude: ['id'],
+            exclude: ['id_facultad'],
           }),
         },
       },

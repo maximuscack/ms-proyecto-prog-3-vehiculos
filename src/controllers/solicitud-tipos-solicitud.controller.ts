@@ -33,6 +33,6 @@ export class SolicitudTiposSolicitudController {
   async getTiposSolicitud(
     @param.path.number('id') id: typeof Solicitud.prototype.id_solicitud,
   ): Promise<TiposSolicitud> {
-    return this.solicitudRepository.tiene_tipo_solicitud(id);
+    return this.solicitudRepository.tiposSolicitud(id);
   }
 }

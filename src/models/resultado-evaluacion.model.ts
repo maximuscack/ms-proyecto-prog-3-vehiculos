@@ -22,8 +22,8 @@ export class ResultadoEvaluacion extends Entity {
   })
   formato_diligenciado: string;
 
-  @belongsTo(() => EvaluacionSolicitud, {name: 'tiene_evaluacionSolicitud'})
-  id_evaluacionSolicitud: number;
+  @belongsTo(() => EvaluacionSolicitud)
+  evaluacionSolicitudId: number;
 
   constructor(data?: Partial<ResultadoEvaluacion>) {
     super(data);

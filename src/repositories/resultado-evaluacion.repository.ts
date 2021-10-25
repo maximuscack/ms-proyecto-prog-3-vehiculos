@@ -10,13 +10,13 @@ export class ResultadoEvaluacionRepository extends DefaultCrudRepository<
   ResultadoEvaluacionRelations
 > {
 
-  public readonly tiene_evaluacionSolicitud: BelongsToAccessor<EvaluacionSolicitud, typeof ResultadoEvaluacion.prototype.id_RE>;
+  public readonly evaluacionSolicitud: BelongsToAccessor<EvaluacionSolicitud, typeof ResultadoEvaluacion.prototype.id_RE>;
 
   constructor(
     @inject('datasources.Mysql') dataSource: MysqlDataSource, @repository.getter('EvaluacionSolicitudRepository') protected evaluacionSolicitudRepositoryGetter: Getter<EvaluacionSolicitudRepository>,
   ) {
     super(ResultadoEvaluacion, dataSource);
-    this.tiene_evaluacionSolicitud = this.createBelongsToAccessorFor('tiene_evaluacionSolicitud', evaluacionSolicitudRepositoryGetter,);
-    this.registerInclusionResolver('tiene_evaluacionSolicitud', this.tiene_evaluacionSolicitud.inclusionResolver);
+    this.evaluacionSolicitud = this.createBelongsToAccessorFor('evaluacionSolicitud', evaluacionSolicitudRepositoryGetter,);
+    this.registerInclusionResolver('evaluacionSolicitud', this.evaluacionSolicitud.inclusionResolver);
   }
 }

@@ -37,7 +37,7 @@ export class DepartamentoController {
         'application/json': {
           schema: getModelSchemaRef(Departamento, {
             title: 'NewDepartamento',
-            exclude: ['id'],
+            exclude: ['id_departamento'],
           }),
         },
       },

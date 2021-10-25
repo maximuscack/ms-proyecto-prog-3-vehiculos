@@ -33,6 +33,6 @@ export class ResultadoEvaluacionEvaluacionSolicitudController {
   async getEvaluacionSolicitud(
     @param.path.number('id') id: typeof ResultadoEvaluacion.prototype.id_RE,
   ): Promise<EvaluacionSolicitud> {
-    return this.resultadoEvaluacionRepository.tiene_evaluacionSolicitud(id);
+    return this.resultadoEvaluacionRepository.evaluacionSolicitud(id);
   }
 }
