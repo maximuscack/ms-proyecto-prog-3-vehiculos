@@ -37,7 +37,7 @@ export class EvaluacionSolicitudController {
         'application/json': {
           schema: getModelSchemaRef(EvaluacionSolicitud, {
             title: 'NewEvaluacionSolicitud',
-            exclude: ['id'],
+            exclude: ['id_E'],
           }),
         },
       },
