@@ -1,6 +1,23 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model()
+@model({
+  settings: {
+    foreignKeys: {
+      fk_jurados: {
+        name: 'fk_jurados',
+        entity: 'jurados',
+        entityKey: 'id',
+        foreignKey: 'id_jurados',
+      },
+      fk_area_deinvesstigacion: {
+        name: 'fk_area_deinvesstigacion',
+        entity: 'area-linea-investigacion',
+        entityKey: 'id',
+        foreignKey: 'areaLineaInvetigacionId',
+      },
+    },
+  },
+})
 export class JuradosxInvestigacion extends Entity {
   @property({
     type: 'number',

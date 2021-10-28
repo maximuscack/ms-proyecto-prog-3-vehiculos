@@ -3,7 +3,24 @@ import {Jurados} from './jurados.model';
 import {Solicitud} from './solicitud.model';
 import {ResultadoEvaluacion} from './resultado-evaluacion.model';
 
-@model()
+@model({
+  settings: {
+    foreignKeys: {
+      fk_jurados: {
+        name: 'fk_jurados',
+        entity: 'jurados',
+        entityKey: 'id',
+        foreignKey: 'id_jurados',
+      },
+      fk_solicitud: {
+        name: 'fk_solicitud',
+        entity: 'solicitud',
+        entityKey: 'id',
+        foreignKey: 'solicitudId',
+      },
+    },
+  },
+})
 export class EvaluacionSolicitud extends Entity {
   @property({
     type: 'number',
