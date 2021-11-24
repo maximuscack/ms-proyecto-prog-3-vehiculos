@@ -41,3 +41,4 @@ export * from './resultados-evaluacion.controller';
 export * from './evaluacion-solicitud.controller';
 export * from './area-linea-investigacion.controller';
 export * from './jurados.controller';
+export * from './cargaarchivos.controller';
